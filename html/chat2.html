@@ -115,7 +115,32 @@ margin-left: 10%;
         box-sizing: border-box;
 
       }
-
+      #rooms-column {
+      max-width: 20%;
+      background-color: #f0f0f0;
+      padding: 5px;
+      height: 100%;
+      overflow: hidden;
+      opacity: 80%;
+      overflow-y: auto;
+      overflow-y: scroll;
+      font-size: 18px;
+margin-left: 10%;
+      box-shadow:  0 50px 100px -20px rgba(2, 2, 2, 0.74), 0 30px 60px -30px rgba(0, 0, 0, 0.41),inset 0 -2px 6px 0 rgba(1, 7, 14, 0.95);
+    }
+    #rooms-column-user {
+      max-width: 20%;
+      background-color: #f0f0f0;
+      padding: 5px;
+      height: 100%;
+      overflow: hidden;
+      opacity: 80%;
+      overflow-y: auto;
+      overflow-y: scroll;
+      font-size: 18px;
+margin-left: 10%;
+      box-shadow:  0 50px 100px -20px rgba(2, 2, 2, 0.74), 0 30px 60px -30px rgba(0, 0, 0, 0.41),inset 0 -2px 6px 0 rgba(1, 7, 14, 0.95);
+    }
     #messages {
       max-width:85%;
       max-height: 70%;
@@ -176,6 +201,13 @@ margin-left: 10%;
   <div id="body">
   <div id="columns-container">
         
+    <div id="rooms-column">
+      
+      <div id="rooms-column-user">
+      <ul id="rooms" class="no-bullets"></ul>
+      </div>
+    </div>
+    
       
         <div id="messages-column">
           <div style="text-shadow: 0 0 7px lightskyblue, 0 0 4px lightskyblue,  0 0 10px lightskyblue, 0 0 12px lightskyblue; color: ghostwhite; margin-left:70%; z-index:2;">Main_Chat</div>
