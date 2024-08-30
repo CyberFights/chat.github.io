@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+    #members-column-user {
+      max-width: 80%;
+      background-color: #f0f0f0;
+      padding: 5px;
+      height: 50%;
+      overflow: hidden;
+      opacity: 80%;
+      overflow-y: auto;
+      overflow-y: scroll;
+      font-size: 18px;
+margin-left: 10%;
+      box-shadow:  0 50px 100px -20px rgba(2, 2, 2, 0.74), 0 30px 60px -30px rgba(0, 0, 0, 0.41),inset 0 -2px 6px 0 rgba(1, 7, 14, 0.95);
+    }
+      ul.no-bullets {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+       #columns-container {
+      display: flex;
+      justify-content: space-between;
+      height: 90%;
+      width: 95%;
+      box-shadow:  0 50px 100px -20px rgba(50,50,93,0.25), 0 30px 60px -30px rgba(0,0,0,0.3),inset 0 -2px 6px 0 rgba(10,37,64,0.35);
+    }
+     #members-column,
+      #messages-column {
+        flex: 1;
+        border: 2px solid transparent;
+        border-radius: 2%/3%;
+        box-sizing: border-box;
+
+      }
+
+    #messages {
+      max-width:85%;
+      max-height: 70%;
+    }
+
+    #messages-column {
+      max-width: 100%;
+      padding: 5px;
+      max-height: 100%; /* Set your maximum height */
+      overflow-y: auto; /* Add scrolling when content overflows */
+      background-color: black;
+      color: white;
+      opacity: 90%;
+      overflow-y: scroll;
+    font-size: 20px;
+      position: relative;
+     round: 10%;
+      box-shadow-top: 0 5px #fff;
+      box-shadow:  0 50px 100px -20px rgba(13, 13, 14, 0.96), 0 30px 60px -30px rgba(13, 13, 13, 0.3),inset 0 -2px 6px 0 rgba(149, 195, 238, 0.99);
+    }
+    
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="mySidebar" class="sidebar">
+  
+          <div id="members-column-user">
+          <ul id="online-users" class="no-bullets"></ul>
+          </div>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#">About</a>
+  <a href="#">Rules</a>
+  <a href="#">Terms of Service</a>
+  <a href="#">User Settings</a>
+</div>
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰ Menu</button>  
+  </div>
+    <div id="columns-container">
+        
+      
+        <div id="messages-column">
+          <div style="text-shadow: 0 0 7px lightskyblue, 0 0 4px lightskyblue,  0 0 10px lightskyblue, 0 0 12px lightskyblue; color: ghostwhite; margin-left:70%; z-index:2;">Main_Chat</div>
+          <ul id="messages" class="no-bullets"></ul>
+          
+        </div>
+      </div>
+     
+
+      <form id="form" action="" enctype="multipart/form-data">
+       <input id="m" placeholder="Type your message here..." autocomplete="off" style="width: 70%; height:62px; box-shadow:  0 2px 4px  rgba(7, 1, 1, 0.41), 0 7px 13px -3px rgba(0, 0, 0, 0.91),inset 0 -3px 0  rgba(0, 0, 0, 0.51);" />
+        <button style="background-color: green; color: white; width: 7%; height:55px; border-radius:10%/10%;  box-shadow-left: 2px solid grey;  box-shadow-bottom: 2px solid grey; margin-left: -0.5%;">Send</button>  <label for="image-input"> <i class="material-icons">attachment</i> </label> <input type="file" id="image-input" accept="image/*" style="width: 10%;"/>
+      </form>
+      </div>
+    <script>
+    function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+</body>
+</html> 
