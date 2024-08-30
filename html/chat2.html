@@ -106,7 +106,7 @@ margin-left: 10%;
       width: 95%;
       box-shadow:  0 50px 100px -20px rgba(50,50,93,0.25), 0 30px 60px -30px rgba(0,0,0,0.3),inset 0 -2px 6px 0 rgba(10,37,64,0.35);
     }
-     #members-column,
+     #rooms-column,
       #messages-column {
         flex: 1;
         border: 2px solid transparent;
@@ -122,6 +122,23 @@ margin-left: 10%;
 
     #messages-column {
       max-width: 80%;
+      padding: 5px;
+      max-height: 80%; /* Set your maximum height */
+      overflow-y: auto; /* Add scrolling when content overflows */
+      background-color: black;
+      color: white;
+      opacity: 90%;
+      overflow: hidden;
+      overflow-y: scroll;
+    font-size: 20px;
+      position: relative;
+     round: 10%;
+      box-shadow-top: 0 5px #fff;
+      box-shadow:  0 50px 100px -20px rgba(13, 13, 14, 0.96), 0 30px 60px -30px rgba(13, 13, 13, 0.3),inset 0 -2px 6px 0 rgba(149, 195, 238, 0.99);
+    }
+    #rooms-column {
+      max-width: 20%;
+      margin-left: 80%;
       padding: 5px;
       max-height: 80%; /* Set your maximum height */
       overflow-y: auto; /* Add scrolling when content overflows */
@@ -180,7 +197,9 @@ margin-left: 10%;
           <ul id="messages" class="no-bullets" style="height: 80%; max-width: 80%;"></ul>
           
         </div>
-      </div>
+        <div id="rooms-column">
+          <ul id="rooms" class="no-bullets" style="height: 80%; max-width: 20%; margin-left: 80%;"></ul>
+        </div>
      
 
       <form id="form" action="" enctype="multipart/form-data">
@@ -188,7 +207,7 @@ margin-left: 10%;
         <button style="background-color: green; color: white; width: 7%; height:55px; border-radius:10%/10%;  box-shadow-left: 2px solid grey;  box-shadow-bottom: 2px solid grey; margin-left: -0.5%;">Send</button>  <label for="image-input"> <i class="material-icons">attachment</i> </label> <input type="file" id="image-input" accept="image/*" style="width: 10%;"/>
       </form>
       </div>
-  
+    </div>
     <script>
     function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
