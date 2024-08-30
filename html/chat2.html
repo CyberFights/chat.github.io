@@ -136,7 +136,17 @@ margin-left: 10%;
       box-shadow-top: 0 5px #fff;
       box-shadow:  0 50px 100px -20px rgba(13, 13, 14, 0.96), 0 30px 60px -30px rgba(13, 13, 13, 0.3),inset 0 -2px 6px 0 rgba(149, 195, 238, 0.99);
     }
-    
+    #form {
+      position: relative;
+      width: 80%; /* Take the full width of the container */
+      box-sizing: border-box;
+      padding: 1px; /* Adjust padding as needed */
+      /* Add background color if desired */
+    z-index: 2;
+margin-left: 33.5%;
+      margin-top: -1%;
+      
+    }
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
@@ -162,6 +172,7 @@ margin-left: 10%;
   <button class="openbtn" onclick="openNav()">☰ Menu</button>  
   </div>
   <div id="body">
+    <marquee class="title" behavior="scroll" direction="left" style="color: #000000; text-shadow: 0 0 8px #FF0000, 0 0 3px #FF0000; font-size: 50px; text-align:center;">Cyber Fighters - Connecting Fighters World Wide</marquee>
         <div id="columns-container">
         
       
