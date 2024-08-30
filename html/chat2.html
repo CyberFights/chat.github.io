@@ -8,7 +8,25 @@ body {
   max-width: 100%;
   max-height: 100%;
 }
+#body{
+        position:fixed;
+      margin-top: 2%;
+      margin-left: 2%;
+      display: flex;
+      flex-direction: column;
+      background-image: url('/workspaces/home/html/assets/images/webback (1).png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size:80%;
+      background-size:cover;
+      background-position: center;
+      height: 90%;
+      width: 92%;
+        border: 4px solid white;
+        border-radius: 3%/5%;
+       
 
+    }
 .sidebar {
   height: 100%;
   width: 0;
@@ -143,7 +161,8 @@ margin-left: 10%;
 <div id="main">
   <button class="openbtn" onclick="openNav()">☰ Menu</button>  
   </div>
-    <div id="columns-container">
+  <div id="body">
+        <div id="columns-container">
         
       
         <div id="messages-column">
@@ -159,6 +178,7 @@ margin-left: 10%;
         <button style="background-color: green; color: white; width: 7%; height:55px; border-radius:10%/10%;  box-shadow-left: 2px solid grey;  box-shadow-bottom: 2px solid grey; margin-left: -0.5%;">Send</button>  <label for="image-input"> <i class="material-icons">attachment</i> </label> <input type="file" id="image-input" accept="image/*" style="width: 10%;"/>
       </form>
       </div>
+  </div>
     <script>
     function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
