@@ -10,7 +10,6 @@ const server = http.createServer(app);
 const io = socketio(server, { cors: { origin: "*" } });
 const db = new Database();
 const directoryPath = path.join(__dirname, '/html/uploads');
-const apiKey = $apikey;
 // Static files middleware
 app.use(express.static(path.join(__dirname, "html")));
 
@@ -94,7 +93,7 @@ app.post('/upload', upload.single('image'), (req, res) => {
         
       req.open("POST", "https://api.jsonbin.io/v3/b", true);
       req.setRequestHeader("Content-Type", "application/json");
-      req.setRequestHeader("X-Master-Key", `${apiKey}`);
+      req.setRequestHeader("X-Master-Key", ``);
       req.send(`${userDetails}`);
         const { password, ...responseDetails } = userDetails;
         res.status(200).json({ message: "User registered successfully", userDetails: responseDetails });
