@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+  @import url('https://fonts.googleapis.com/css?family=Lato');
 body {
   font-family: "Lato", sans-serif;
   max-width: 100%;
@@ -171,6 +172,128 @@ margin-left: 10%;
     z-index: 2;
       margin-left: 20%;
     }
+    .chat-container {
+  display: none;
+ background-image: linear-gradient(#1700fb, royalblue, lightblue, white);
+
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.7);
+    overflow: hidden;
+    padding: 15px;
+    position: relative;
+    width: 320px;
+    max-width: 100%;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.message {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    box-shadow: 0px 15px 5px 0px rgba(0,0,0,0.5);
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.message.left {
+    padding: 15px 20px 15px 70px;
+}
+
+.message.right {
+    align-self: flex-end;
+    padding: 15px 70px 15px 20px;
+}
+
+.logo {
+    border-radius: 50%;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.7);
+    object-fit: cover;
+    position: absolute;
+left: 10px;
+    top: -10px;
+    width: 50px;
+    height: 50px;
+}
+
+.message.right .logo {
+    left: auto;
+    right: 10px;
+}
+
+.message p {
+    margin: 0;
+}
+
+.text_input {
+    font-size: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+}
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: red;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+}
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+.chat-container .cancel {
+  background-color: red;
+  align-items: right;
+    justify-content: right;
+}
+#user-settings {
+  display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.7);
+    overflow: hidden;
+    padding: 15px;
+    position: relative;
+    width: 320px;
+    max-width: 100%;
+}
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
@@ -190,7 +313,7 @@ margin-left: 10%;
   <a href="#">About</a>
   <a href="#">Rules</a>
   <a href="#">Terms of Service</a>
-  <a href="#">User Settings</a>
+  <a href="javascript:void(0)" class="settings-button" onclick="openSettings()">User Settings</a>
 </div>
 <marquee class="title" behavior="scroll" direction="left" style="color: #000000; text-shadow: 0 0 8px #f76363, 0 0 3px #ff0000b6; font-size: 40px; text-align:center;">Cyber Fighters - Connecting Fighters World Wide</marquee>
  
@@ -219,7 +342,66 @@ margin-left: 10%;
         <button style="background-color: green; color: white; width: 7%; height:55px; border-radius:10%/10%;  box-shadow-left: 2px solid grey;  box-shadow-bottom: 2px solid grey; margin-left: -0.5%;">Send</button>  <label for="image-input"> <i class="material-icons">attachment</i> </label> <input type="file" id="image-input" accept="image/*" style="width: 10%;"/>
       </form>
       </div>
-    
+
+      <div id="user-settings" style="opacity: 100%;">
+        <button type="button" style="margin-left: 80%; background-color: red;" onclick="closeSettings()">Close</button>
+          
+        <div class="setting">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name">
+        </div><br>
+        
+        <div class="setting">
+          <label for="details">Details:</label>
+          <textarea id="details" name="details"></textarea>
+        </div>
+        <br>
+        
+        <div class="setting">
+          <label for="color">Favorite Color:</label>
+          <input type="color" id="color" name="color">
+        </div>
+        <br>
+        <div class="setting">
+          <label for="profile-image">Profile Image:</label>
+          <input type="file" id="profile-image" name="profile-image" accept="image/*">
+          <img id="image-preview" src="" alt="Profile Image Preview" style="display: none; max-width: 200px;">
+        </div>
+        
+        <button id="save-settings">Save Settings</button>
+      </div>
+      </div>
+      
+      <div class="chat-container" id="chat-container">
+        <button type="button" style="margin-left: 80%; background-color: red;" onclick="closeForm()">Close</button>
+        <ul class="chat"> 
+            <li class="message left">
+                <img class="logo" src="" alt="">
+                <p>I'm hungry!</p>
+            </li>
+            <li class="message right">
+                <img class="logo" src="" alt="">
+                <p>Hi hungry, nice to meet you. I'm Dad.</p>
+            </li>
+            <li class="message left">
+                <img class="logo" src="" alt="">
+                <p>DAD! I'm serious!</p>
+            </li>
+            <li class="message right">
+                <img class="logo" src="" alt="">
+                <p>I thought your name was hungry...?</p>
+            </li>
+            <li class="message left">
+                <img class="logo" src="" alt="">
+                <p>ARE YOU KIDDING ME?</p>
+            </li>
+            <li class="message right">
+                <img class="logo" src="" alt="">
+                <p>No, I'm Dad...</p>
+            </li>
+        </ul>
+        <input type="text" class="text_input" placeholder="Message..."/>
+    </div>
     <script>
     function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
@@ -230,6 +412,105 @@ function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
 }
+function openForm() {
+  document.getElementById("chat-container").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("chat-container").style.display = "none";
+}
+
+function openSettings() {
+  document.getElementById("user-settings").style.display = "block";
+}
+
+function closeSettings() {
+  document.getElementById("user-settings").style.display = "none";
+}
+
+// User settings object to store the current settings
+const userSettings = {
+  name: '',
+  details: '',
+  color: '#000000',
+  profileImage: null
+};
+
+// DOM elements
+const nameInput = document.getElementById('name');
+const detailsInput = document.getElementById('details');
+const colorInput = document.getElementById('color');
+const profileImageInput = document.getElementById('profile-image');
+const imagePreview = document.getElementById('image-preview');
+const saveButton = document.getElementById('save-settings');
+
+// Event listeners
+nameInput.addEventListener('input', updateName);
+detailsInput.addEventListener('input', updateDetails);
+colorInput.addEventListener('input', updateColor);
+profileImageInput.addEventListener('change', updateProfileImage);
+saveButton.addEventListener('click', saveSettings);
+
+// Update functions
+function updateName(event) {
+  userSettings.name = event.target.value;
+}
+
+function updateDetails(event) {
+  userSettings.details = event.target.value;
+}
+
+function updateColor(event) {
+  userSettings.color = event.target.value;
+}
+
+function updateProfileImage(event) {
+  const file = event.target.files[0];
+  if (file && file.type.startsWith('image/')) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      userSettings.profileImage = e.target.result;
+      imagePreview.src = e.target.result;
+      imagePreview.style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+  } else {
+    alert('Please select a valid image file.');
+    profileImageInput.value = '';
+  }
+}
+
+// Save settings
+function saveSettings() {
+  // Here you would typically send the userSettings object to a server
+  // For this example, we'll just log it to the console
+  console.log('Saving user settings:', userSettings);
+  alert('Settings saved successfully!');
+}
+
+// Load initial settings (if available)
+function loadInitialSettings() {
+  // Here you would typically fetch the user's current settings from a server
+  // For this example, we'll use some dummy data
+  const dummySettings = {
+    name: 'John Doe',
+    details: 'Web developer and coffee enthusiast',
+    color: '#3498db',
+    profileImage: 'https://example.com/profile-image.jpg'
+  };
+
+  nameInput.value = dummySettings.name;
+  detailsInput.value = dummySettings.details;
+  colorInput.value = dummySettings.color;
+  imagePreview.src = dummySettings.profileImage;
+  imagePreview.style.display = 'block';
+
+  // Update the userSettings object
+  Object.assign(userSettings, dummySettings);
+}
+
+// Call loadInitialSettings when the page loads
+window.addEventListener('load', loadInitialSettings);
 </script>
 </body>
 </html> 
