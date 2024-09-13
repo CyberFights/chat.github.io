@@ -291,7 +291,7 @@ footer a {
     box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.7);
     overflow: hidden;
     padding: 15px;
-    position: relative;
+    
     width: 40%;
     max-width: 100%;
     align-items: center;
@@ -430,6 +430,8 @@ function closeForm() {
 
 function openSettings() {
   document.getElementById("user-settings").style.display = "block";
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
 }
 
 function closeSettings() {
