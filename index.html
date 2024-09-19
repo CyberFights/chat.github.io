@@ -521,7 +521,7 @@
        const image = formData.get('image');
 
           try {
-            const response = await fetch('/register', { // Make sure the endpoint matches your server configuration
+            const response = await fetch('/upload', { // Make sure the endpoint matches your server configuration
               method: 'POST',
               body: formData, // FormData will be sent correctly with 'multipart/form-data' automatically set
             });
