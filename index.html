@@ -444,7 +444,7 @@
     
     <div id="registration-form-container" style="display:none;">
       <button onclick="toggle_register()" title="close" aria-label="Close" style="width:8%; margin-right: 1%;">&#10006;</button>
-      <form method="post" action="/upload" enctype="multipart/form-data" id="registrationForm">
+      <form method="post" action="" enctype="multipart/form-data" id="registrationForm">
                 <input name="email" type="email" placeholder="Email address" required />
                 <input id="username" name="username" type="text" placeholder="Username" required />
                 <input id="password" name="password" type="password" placeholder="Password" required />
@@ -523,7 +523,7 @@
        const image = formData.get('image');
 
           try {
-            const response = await fetch('/register', { // Make sure the endpoint matches your server configuration
+            const response = await fetch('/upload', { // Make sure the endpoint matches your server configuration
               method: 'POST',
               body: formData, // FormData will be sent correctly with 'multipart/form-data' automatically set
             });
@@ -535,7 +535,7 @@
               localStorage.setItem('token', 'true'); // You can adjust based on how you handle authentication tokens
               localStorage.setItem('name', formData.get('username'));
               localStorage.setItem('languagePreference', formData.get('nativeLanguage'));
-              window.location.href = '/chat.html'; // Redirect user to the chat page
+              window.location.href = '/html/chat.html'; // Redirect user to the chat page
             } else {
               // Registration failed
               alert("Registration failed: " + data.message);
