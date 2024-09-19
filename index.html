@@ -429,7 +429,7 @@
       <div id="login_box" style="display: none;">
         <button onclick="toggle_login()" title="close" aria-label="Close" style="width:4%; margin-right: 1%;">&#10006;</button>
         <h1 style="color:red; text-shadow: 0 0 8px #000, 0 0 3px #000, 0 0 12px #000, 0 0 10px red;">Login Form</h1>
-        <form action="/login" method="post" id="loginForm">
+        <form action="" method="post" id="loginForm">
           <label for="username">Username :</label><br>
           <input type="text" id="username" name="username" placeholder="Enter your username..." required autocomplete="off"><br>
           <label for="password">Password :</label><br>
@@ -444,7 +444,7 @@
     
     <div id="registration-form-container" style="display:none;">
       <button onclick="toggle_register()" title="close" aria-label="Close" style="width:8%; margin-right: 1%;">&#10006;</button>
-      <form method="post" action="" enctype="multipart/form-data" id="registrationForm">
+      <form method="post" action="/home" enctype="multipart/form-data" id="registrationForm">
                 <input name="email" type="email" placeholder="Email address" required />
                 <input id="username" name="username" type="text" placeholder="Username" required />
                 <input id="password" name="password" type="password" placeholder="Password" required />
