@@ -8,6 +8,297 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
+      @import url('https://fonts.googleapis.com/css?family=Lato');
+
+#body_2 {
+        position:fixed;
+      margin-top: -3%;
+      margin-left: 10%;
+      display: none;
+      flex-direction: column;
+      
+      height: 84%;
+      width: 80%;
+        border: 4px solid white;
+        border-radius: 3%/5%;
+       
+
+    }
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+  height: 80%;
+}
+
+    #members-column-user {
+      max-width: 80%;
+      background-color: #f0f0f0;
+      padding: 5px;
+      height: 50%;
+      overflow: hidden;
+      opacity: 80%;
+      overflow-y: auto;
+      overflow-y: scroll;
+      font-size: 18px;
+margin-left: 10%;
+      box-shadow:  0 50px 100px -20px rgba(2, 2, 2, 0.74), 0 30px 60px -30px rgba(0, 0, 0, 0.41),inset 0 -2px 6px 0 rgba(1, 7, 14, 0.95);
+    }
+      ul.no-bullets {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+       #columns-container {
+      display: flex;
+      justify-content: space-between;
+      height: 90%;
+      width: 100%;
+      box-shadow:  0 50px 100px -20px rgba(50,50,93,0.25), 0 30px 60px -30px rgba(0,0,0,0.3),inset 0 -2px 6px 0 rgba(10,37,64,0.35);
+    }
+     #rooms-column,
+      #messages-column {
+        flex: 1;
+        border: 2px solid transparent;
+        border-radius: 2%/3%;
+        box-sizing: border-box;
+
+      }
+      #rooms-column {
+      max-width: 20%;
+      background-color: #f0f0f0;
+      padding: 5px;
+      height: 100%;
+      overflow: hidden;
+      opacity: 80%;
+      overflow-y: auto;
+      overflow-y: scroll;
+      font-size: 18px;
+      box-shadow:  0 50px 100px -20px rgba(2, 2, 2, 0.74), 0 30px 60px -30px rgba(0, 0, 0, 0.41),inset 0 -2px 6px 0 rgba(1, 7, 14, 0.95);
+    }
+    #rooms-column-user {
+      max-width: 20%;
+      background-color: #f0f0f0;
+      padding: 5px;
+      height: 100%;
+      overflow: hidden;
+      opacity: 80%;
+      overflow-y: auto;
+      overflow-y: scroll;
+      font-size: 18px;
+
+      box-shadow:  0 50px 100px -20px rgba(2, 2, 2, 0.74), 0 30px 60px -30px rgba(0, 0, 0, 0.41),inset 0 -2px 6px 0 rgba(1, 7, 14, 0.95);
+    }
+    #messages {
+      max-width:85%;
+      max-height: 70%;
+    }
+
+    #messages-column {
+      max-width: 80%;
+      padding: 5px;
+      max-height: 100%; /* Set your maximum height */
+      overflow-y: auto; /* Add scrolling when content overflows */
+      background-color: black;
+      color: white;
+      opacity: 90%;
+      overflow: hidden;
+      overflow-y: scroll;
+    font-size: 20px;
+      position: relative;
+     border-radius: 10%;
+      box-shadow: 0 5px #fff;
+      box-shadow:  0 50px 100px -20px rgba(13, 13, 14, 0.96), 0 30px 60px -30px rgba(13, 13, 13, 0.3),inset 0 -2px 6px 0 rgba(149, 195, 238, 0.99);
+    }
+ 
+    #form {
+      position: relative;
+      width: 80%; /* Take the full width of the container */
+      box-sizing: border-box;
+      padding: 1px; /* Adjust padding as needed */
+      /* Add background color if desired */
+    z-index: 2;
+      margin-left: 20%;
+    }
+    .chat-container {
+  display: none;
+ background-image: linear-gradient(#1700fb, royalblue, lightblue, white);
+
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.7);
+    overflow: hidden;
+    padding: 15px;
+    position: relative;
+    width: 320px;
+    max-width: 100%;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.message {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    box-shadow: 0px 15px 5px 0px rgba(0,0,0,0.5);
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.message.left {
+    padding: 15px 20px 15px 70px;
+}
+
+.message.right {
+    align-self: flex-end;
+    padding: 15px 70px 15px 20px;
+}
+
+.logo {
+    border-radius: 50%;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.7);
+    object-fit: cover;
+    position: absolute;
+left: 10px;
+    top: -10px;
+    width: 50px;
+    height: 50px;
+}
+
+.message.right .logo {
+    left: auto;
+    right: 10px;
+}
+
+.message p {
+    margin: 0;
+}
+
+.text_input {
+    font-size: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+}
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: red;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+}
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+.chat-container .cancel {
+  background-color: red;
+  align-items: right;
+    justify-content: right;
+}
+#user-settings {
+  display: none;
+  background-image: linear-gradient(#1700fb, royalblue, lightblue, white);
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.7);
+    overflow: hidden;
+    padding: 15px;
+    position: relative; 
+    width: 40%;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    left: 30%;
+    min-height: 40%;
+    font-family: 'Lato', sans-serif;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
     * {
         box-sizing: border-box;
         font-family: "Poppins", sans-serif;
@@ -25,14 +316,21 @@
         margin: 0;
         height: 100vh;
       }
-
       body {
-        background-color: black;
-         display: flex;
+  font-family: "Lato", sans-serif;
+  max-width: 100%;
+  max-height: 100%;
+  background-image: url("assets/images/webback\ \(1\).png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size:80%;
+      background-size:cover;
+      background-position: center;
+      display: flex;
         justify-content: center;
         align-items: center;
-      }
-            #body{
+}
+            #body_1 {
               position:fixed;
             margin-top: 2%;
             margin-left: 2%;
@@ -421,7 +719,7 @@
     </style>
   </head>
   <body>
-    <div id="body">
+    <div id="body_1">
       <p id="wel">Welcome</p><br>
       <p id="to">to</p><br>
       <p id="cf">Cyber Fighters</p><br>
@@ -444,7 +742,7 @@
     
     <div id="registration-form-container" style="display:none;">
       <button onclick="toggle_register()" title="close" aria-label="Close" style="width:8%; margin-right: 1%;">&#10006;</button>
-      <form method="post" action="/home/html/chat2" enctype="multipart/form-data" id="registrationForm">
+      <form method="post" action="" enctype="multipart/form-data" id="registrationForm">
                 <input name="email" type="email" placeholder="Email address" required />
                 <input id="username" name="username" type="text" placeholder="Username" required />
                 <input id="password" name="password" type="password" placeholder="Password" required />
@@ -466,6 +764,109 @@
                 <input type="submit" value="Register" />
             </form>
     </div>
+
+    <div id="mySidebar" class="sidebar">
+  
+      <div id="members-column-user">
+           <div style="opacity: 100%; text-shadow: 0 0 7px rgb(13, 250, 33), 0 0 4px rgb(43, 243, 86),  0 0 10px rgb(83, 245, 145), 0 0 12px rgb(135, 250, 164); color: ghostwhite; margin-left:20%; z-index:2;">Online Members</div>
+      <ul id="online-users" class="no-bullets"></ul>
+      </div>
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+<a href="#">About</a>
+<a href="#">Rules</a>
+<a href="#">Terms of Service</a>
+<a href="javascript:void(0)" class="settings-button" onclick="openSettings()">User Settings</a>
+</div>
+<marquee class="title" behavior="scroll" direction="left" style="color: #000000; text-shadow: 0 0 8px #f76363, 0 0 3px #ff0000b6; font-size: 40px; text-align:center;">Cyber Fighters - Connecting Fighters World Wide</marquee>
+
+<div id="main">
+<button class="openbtn" onclick="openNav()">☰ Menu</button>  
+   
+</div>
+<div id="body_2">
+<div id="columns-container">
+    
+<div id="rooms-column">
+  <div style="opacity: 100%; text-shadow: 0 0 7px rgb(58, 3, 255), 0 0 4px rgb(61, 40, 255),  0 0 10px rgb(75, 86, 247), 0 0 12px rgb(146, 135, 250); color: ghostwhite; margin-left:23%; z-index:2;">Rooms</div>
+  <ul id="rooms" class="no-bullets"></ul>
+</div>
+
+  
+    <div id="messages-column">
+      <div style="text-shadow: 0 0 7px lightskyblue, 0 0 4px lightskyblue,  0 0 10px lightskyblue, 0 0 12px lightskyblue; color: ghostwhite; margin-left:70%; z-index:2;">Main_Chat</div>
+      <ul id="messages" class="no-bullets" style="height: 80%; max-width: 80%;"></ul>
+      
+    </div>
+  </div>
+
+  <form id="form" action="" enctype="multipart/form-data">
+   <input id="m" placeholder="Type your message here..." autocomplete="off" style="width: 70%; height:62px; box-shadow:  0 2px 4px  rgba(7, 1, 1, 0.41), 0 7px 13px -3px rgba(0, 0, 0, 0.91),inset 0 -3px 0  rgba(0, 0, 0, 0.51);" />
+    <button style="background-color: green; color: white; width: 7%; height:55px; border-radius:10%/10%;  box-shadow: 2px solid grey;  box-shadow: 2px solid grey; margin-left: -0.5%;">Send</button>  <label for="image-input"> <i class="material-icons">attachment</i> </label> <input type="file" id="image-input" accept="image/*" style="width: 10%;"/>
+  </form>
+  </div>
+
+  <div id="user-settings" style="opacity: 100%;">
+    <button type="button" style="margin-left: 80%; background-color: red;" onclick="closeSettings()">Close</button>
+      
+    <div class="setting">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+    </div><br>
+    
+    <div class="setting">
+      <label for="details">Details:</label>
+      <textarea id="details" name="details"></textarea>
+    </div>
+    <br>
+    
+    <div class="setting">
+      <label for="color">Favorite Color:</label>
+      <input type="color" id="color" name="color">
+    </div>
+    <br>
+    <div class="setting">
+      <label for="profile-image">Profile Image:</label>
+      <input type="file" id="profile-image" name="profile-image" accept="image/*">
+      <img id="image-preview" src="" alt="Profile Image Preview" style="display: none; max-width: 200px;">
+    </div>
+    
+    <button id="save-settings">Save Settings</button>
+  </div>
+  </div>
+  
+  <div class="chat-container" id="chat-container">
+    <button type="button" style="margin-left: 80%; background-color: red;" onclick="closeForm()">Close</button>
+    <ul class="chat"> 
+        <li class="message left">
+            <img class="logo" src="" alt="">
+            <p>I'm hungry!</p>
+        </li>
+        <li class="message right">
+            <img class="logo" src="" alt="">
+            <p>Hi hungry, nice to meet you. I'm Dad.</p>
+        </li>
+        <li class="message left">
+            <img class="logo" src="" alt="">
+            <p>DAD! I'm serious!</p>
+        </li>
+        <li class="message right">
+            <img class="logo" src="" alt="">
+            <p>I thought your name was hungry...?</p>
+        </li>
+        <li class="message left">
+            <img class="logo" src="" alt="">
+            <p>ARE YOU KIDDING ME?</p>
+        </li>
+        <li class="message right">
+            <img class="logo" src="" alt="">
+            <p>No, I'm Dad...</p>
+        </li>
+    </ul>
+    <input type="text" class="text_input" placeholder="Message..."/>
+</div>
+
+
+
     <script>
      
 
@@ -535,7 +936,7 @@
               localStorage.setItem('token', 'true'); // You can adjust based on how you handle authentication tokens
               localStorage.setItem('name', formData.get('username'));
               localStorage.setItem('languagePreference', formData.get('nativeLanguage'));
-              window.location.href = '/html/chat.html'; // Redirect user to the chat page
+              
             } else {
               // Registration failed
               alert("Registration failed: " + data.message);
