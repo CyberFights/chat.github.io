@@ -35,6 +35,9 @@ app.use('/html/uploads', express.static(directoryPath));
 
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+app.get('/', (res, req) => {
+     window.location.href = '/index.html'; 
+});
 app.post('/upload', upload.single('image'), (req, res) => {
     // Registration logic remains the same
     const { email, password, height, weight, age, username, info, nativeLanguage } = req.body;
